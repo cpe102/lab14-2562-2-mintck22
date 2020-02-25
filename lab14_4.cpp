@@ -19,3 +19,26 @@ int main(){
 }
 
 //Write definition of shuffle() here 
+void shuffle(int &a,int &b, int &c, int &d){
+
+	int x[4] ={a,b,c,d};
+	int z[] = {0,1,2,3};
+
+	z[0] = rand()%4;
+	while (1)
+	{
+		z[1] = rand()%4;
+		if(z[1] != z[0]) break;
+	}
+	while (1)
+	{
+		z[2] = rand()%4;
+		if((z[2] != z[0]) && (z[2] != z[1])) break;
+	}
+	z[3] = 6-z[2]-z[1]-z[0];
+
+	a = x[z[0]];
+	b = x[z[1]];
+	c = x[z[2]];
+	d = x[z[3]];
+}
